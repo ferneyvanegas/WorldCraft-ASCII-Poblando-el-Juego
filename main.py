@@ -2,7 +2,7 @@
 '''
     Desarrollado por: Ferney Vanegas Hernández
     Misión TIC 2022
-    Versión : 1.0.2
+    Versión : 1.0.3
     Título: Reto 5
 '''
 import modules.libs.game_walls as w
@@ -18,7 +18,8 @@ def main():
     # walls: las coordenadas de las murallas
     dim, pos, walls = w.get_walls()
 
-    # Diccionario general de todas las coordenadas del juego ocupadas
+    # Diccionario general de todas las coordenadas del juego ocupadas.
+    # En llave coords se van a ir agregando
     general_coords={
         'dim' : dim,
         'walls' : walls,
@@ -30,13 +31,18 @@ def main():
 
     player, general_coords = p.dim_player(alias.emul_alias_player(), general_coords)
     
+    # Descomentar para ver contenido
+    # ================================
     # print(walls)
     # print(creatures)
     # print(dim_creatures)
     # print(general_coords)
     # print(player)
+    # ================================
 
-    game_params = general_coords
+    # game_params va a contener todos los parámetros para construir el mundo. 
+    # Se crea como copia de general_coords para que pueda tener primeramente los datos de coordenadas obtenidos
+    game_params = general_coords.copy()
     game_params['creatures'] = dim_creatures
     game_params['player'] = player
 

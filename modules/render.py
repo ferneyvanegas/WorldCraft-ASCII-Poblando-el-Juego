@@ -93,10 +93,11 @@ def info_panel(number_walls, game_params):
         if creature['typ'] == 'passive':
             p_creatures+=1
 
+    PLAYER=f"\033[0m\033[93m{game_params['player']['symbol']}" # El jugador es de color amarillo
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print('====================================================')
     print(f'* Total de muros: {number_walls}')
-    print(f'* Vidas de \033[93m{game_params["player"]["alias"]}\033[0m: {game_params["player"]["hearts"]}')
+    print(f'* Vidas de \033[93m{game_params["player"]["alias"]} {PLAYER}\033[0m: {game_params["player"]["hearts"]}')
     print(f'* Total Criaturas: {len(game_params["creatures"])}')
     print(f'** \033[0m\033[92mPasivas: {p_creatures}')
     print(f'\033[0m** \033[91mHostiles: {len(game_params["creatures"]) - p_creatures}')
