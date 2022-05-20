@@ -23,13 +23,13 @@ def construct_game(game_params):
         RESET = '\033[0m' #RESET COLOR
         Fuente: https://www.delftstack.com/es/howto/python/python-print-colored-text/
     '''
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print(f'\033[93m                |-|WORLD CRAFT ASCCI|-|\033[0m')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    BRICK = f'\033[0m▀' # Sin color
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print(f'\033[93m                                     |-|🔥WORLD CRAFT ASCCI🔥|-|\033[0m')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    BRICK = f'\033[0m⬜' # Sin color
     # SPACE = f'\033[0m_'
-    SPACE = '\033[0m ' # Sin color
-    PLAYER=f"\033[0m\033[93m{game_params['player']['symbol']}" # El jugador es de color amarillo
+    SPACE = '\033[0m🟩' # Sin color
+    PLAYER=f"\033[0m\033[93m{game_params['player']['symbol']} " # El jugador es de color amarillo
     for i in range(game_params['dim']): # Dimensioń de ancho
         row=f'\033[0m╬'
         for j in range(game_params['dim']):  # Dimensioń de alto
@@ -50,10 +50,10 @@ def construct_game(game_params):
                 if coord['row'] == i and coord['col']==j:
                     if coord['typ'] == 'passive':
                         # Criaturas pasivas de color verde
-                        creature = f"\033[0m\033[92m{coord['symbol']}"
+                        creature = f"\033[0m\033[92m{coord['symbol']} "
                     else:
                         # Criaturas hostiles de color rojo
-                        creature = f"\033[0m\033[91m{coord['symbol']}"
+                        creature = f"\033[0m\033[91m{coord['symbol']} "
                     creature_exists = True # Si se encuentra una criatura
             
             if game_params['player']['row'] == i and game_params['player']['col']==j:
@@ -94,12 +94,15 @@ def info_panel(number_walls, game_params):
             p_creatures+=1
 
     PLAYER=f"\033[0m\033[93m{game_params['player']['symbol']}" # El jugador es de color amarillo
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print('====================================================')
-    print(f'* Total de muros: {number_walls}')
-    print(f'* Vidas de \033[93m{game_params["player"]["alias"]} {PLAYER}\033[0m: {game_params["player"]["hearts"]}')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('=====================================================================================================')
+    print(f'* Total de muros ⬜: {number_walls}')
+    print(f'* Vidas ♥ de \033[93m{game_params["player"]["alias"]} {PLAYER}\033[0m: {game_params["player"]["hearts"]}')
     print(f'* Total Criaturas: {len(game_params["creatures"])}')
     print(f'** \033[0m\033[92mPasivas: {p_creatures}')
     print(f'\033[0m** \033[91mHostiles: {len(game_params["creatures"]) - p_creatures}')
-    print('\033[0m====================================================')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('\033[0m=====================================================================================================')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('\033[0m\033[92mLa dimensión del juego por defecto es 50x50. Si deseas que varíe, debes revisar las notas de game_walls.py')
+    print('\033[0m=====================================================================================================')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')

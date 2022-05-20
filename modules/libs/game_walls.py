@@ -14,8 +14,8 @@ def get_walls():
     '''
         En la versión anterior se solicitaba un número de 
         dimensiones para el juego. En esta versión asigna el
-        número 100 (200 x 200) en forma predeterminada, para
-        que puedan caber las criaturas.
+        número 50 (50 x 50) en forma predeterminada, para
+        que puedan caber el tope de criaturas.
 
         Sin embargo, si se desea maniobrar con dimensiones diferentes, sírvase descomentar la línea 23 y comentar
         la línea 24
