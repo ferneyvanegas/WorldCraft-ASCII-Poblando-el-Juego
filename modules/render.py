@@ -71,6 +71,22 @@ def construct_game(game_params):
         print(f'\033[0m{row}|]')
 
 def info_panel(number_walls, game_params):
+    '''
+    Parameters:
+    -----------
+    number_walls: int
+        El número de muros creados
+    game_params: dict
+        Diccionario con:
+            dim: la dimensión del mundo
+            walls: lista de las coordenadas de los muros
+            creatures: lista de los diccionarios de las criaturas
+            player: diccionario del jugador
+            coords: el listado de todas las coordenadas de las murallas, criaturas y jugador
+    -----------
+    Return:
+    -----------    
+    '''
     # Calcular criaturas pasivas y hostiles
     p_creatures = 0
     for creature in game_params['creatures']:
