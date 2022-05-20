@@ -83,11 +83,11 @@ def creatures():
     # El valor inicial es 50 apropósito para cumplir la condición de entrar al while
     cant_p = '50'
     cant_h = '50'
-    while not cant_p.isdigit() or not cant_h.isdigit() or int(cant_p) + int(cant_h) > 50:
+    while not cant_p.isdigit() or not cant_h.isdigit() or int(cant_p) + int(cant_h) > 50 or int(cant_p) <= 0 or int(cant_h) <= 0:
         print('*********CREACION DE CRIATURAS*********\n')
         print('(No pueden ser más de 50 en total)\n')
-        cant_p = input('Ingresa el número de criaturas pasivas\n->')
-        cant_h = input('Ingresa el número de criaturas hostiles\n->')
+        cant_p = input('Ingresa el número de criaturas pasivas(Mayor que cero)\n->')
+        cant_h = input('Ingresa el número de criaturas hostiles(Mayor que cero)\n->')
         print('***************************************\n')
     # Se obtienen las colas con las criaturas
     p_creatures, h_creatures = create_creatures(int(cant_p), int(cant_h))

@@ -24,6 +24,7 @@ Los jugadores de World ASCII llegan a un mundo vacío sin criaturas, ni posició
 * La cantidad total de criaturas (pasivas más hostiles) no puede ser mayor que 50
 * Si la mayor cantidad de criaturas son 50, por cada tipo debe haber al menos la misma cantidad disponible
 * Los muros, criaturas y jugador no pueden ocupar la misma coordenada en el juego
+* Debe haber al  menos 1 criatura hostil y 1 criatura pasiva
 
 ## DEFINICIÓN (D)
 ### **Información Suministrada**

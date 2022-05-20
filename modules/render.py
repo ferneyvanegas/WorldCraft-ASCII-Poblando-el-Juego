@@ -23,15 +23,15 @@ def construct_game(game_params):
         RESET = '\033[0m' #RESET COLOR
         Fuente: https://www.delftstack.com/es/howto/python/python-print-colored-text/
     '''
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print(f'\033[93m                |-|WORLD CRAFT ASCCI|-|\033[0m')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    BRICK = f'\033[0m#' # Sin color
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    BRICK = f'\033[0m▀' # Sin color
     # SPACE = f'\033[0m_'
     SPACE = '\033[0m ' # Sin color
     PLAYER=f"\033[0m\033[93m{game_params['player']['symbol']}" # El jugador es de color amarillo
     for i in range(game_params['dim']): # Dimensioń de ancho
-        row=f'\033[0m[|'
+        row=f'\033[0m╬'
         for j in range(game_params['dim']):  # Dimensioń de alto
             creature=''
 
@@ -68,7 +68,7 @@ def construct_game(game_params):
             else:
                 row+=SPACE 
 
-        print(f'\033[0m{row}|]')
+        print(f'\033[0m{row}\033[0m╬')
 
 def info_panel(number_walls, game_params):
     '''
@@ -93,12 +93,12 @@ def info_panel(number_walls, game_params):
         if creature['typ'] == 'passive':
             p_creatures+=1
 
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print('======================================================')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('====================================================')
     print(f'* Total de muros: {number_walls}')
     print(f'* Vidas de \033[93m{game_params["player"]["alias"]}\033[0m: {game_params["player"]["hearts"]}')
     print(f'* Total Criaturas: {len(game_params["creatures"])}')
     print(f'** \033[0m\033[92mPasivas: {p_creatures}')
     print(f'\033[0m** \033[91mHostiles: {len(game_params["creatures"]) - p_creatures}')
-    print('\033[0m======================================================')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('\033[0m====================================================')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
