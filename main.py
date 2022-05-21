@@ -2,7 +2,7 @@
 '''
     Desarrollado por: Ferney Vanegas Hernández
     Misión TIC 2022
-    Versión : 1.0.4
+    Versión : 1.0.5
     Título: Reto 5
 '''
 import modules.libs.game_walls as w

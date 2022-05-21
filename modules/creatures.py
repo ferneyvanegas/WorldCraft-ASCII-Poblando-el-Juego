@@ -142,7 +142,7 @@ def dim_creatures(creatures, general_coords):
                 'symbol' : creatures[i+2][0],
                 'row' : coord[0],
                 'col' : coord[1],
-                'date' : datetime.today().strftime('%d/%m/%Y')
+                'date' : datetime.today().strftime('%d/%m/%Y_%H:%M:%S')
             }
             
             '''
